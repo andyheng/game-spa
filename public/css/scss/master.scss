@@ -1,0 +1,178 @@
+$fontstack: "Open Sans", Helvetica, sans-serif;
+$headerfontstack: "Oswald", Helvetica, sans-serif;
+$lightgray: #d2d2d2;
+$darkgray: #3b3b3b;
+$darkblue: #1c2632;
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+// wrapper / layout
+body {
+  background: $lightgray;
+  color: $darkgray;
+  font-family: $fontstack;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.fullbody-flex { // expands main section for sticky footer
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-main {
+  width: 65%;
+  margin: auto;
+}
+
+// header
+.header {
+  text-align: center;
+  margin-top: 5em;
+  h1 {
+    font-size: 3.5em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+  p {
+    color: #717171;
+    letter-spacing: 2px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-transform: lowercase;
+  }
+}
+
+//button reset
+.btn {
+  border: 1px solid $lightgray;
+  background: $darkblue;
+  color: $lightgray;
+  padding: 0.5em 1em;
+  font-family: $fontstack;
+  font-size: 0.7em;
+  transition: filter 0.2s ease-in;
+  &:hover {
+    cursor: pointer;
+    filter: invert(90%);
+  }
+}
+
+// form
+.form-show,
+.form-submit {
+  display: flex; justify-content: center;
+}
+.form-btn {
+  @extend .btn;
+  background: $darkgray;
+  color: $lightgray;
+
+}
+.form-hide {
+  display: none;
+}
+.form {
+  margin: 1em 0;
+  position: relative;
+  input[type="text"] {
+    border: none;
+    border-bottom: 1px solid $darkgray;
+    display: block;
+    width: 100%;
+    background: $lightgray;
+    padding: 1em;
+    margin: 1em 0;
+    &:required:invalid {box-shadow: none;}
+  }
+}
+
+// main / results section
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+  background: $darkgray;
+}
+
+//results
+.results {
+  color: $lightgray;
+}
+.results h2 {
+  text-align: center;
+  padding: 1rem 0;
+}
+.results-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em 0;
+}
+.results-wrapper img {
+  width: 300px;
+}
+.results-wrapper > * {
+  flex: 1 0 30%;
+}
+
+.results-item {
+  margin: 1em 0;
+  button {
+    margin-top: 10px;
+  }
+}
+
+// sidebar
+.sb {
+  background: $darkblue;
+  color: $lightgray;
+  position: relative;
+}
+.sb-active {
+  flex-basis: 30%;
+}
+.sb-hide {
+  display: none;
+}
+.sb-close {
+  @extend .form-btn;
+  position: absolute;
+  top: 1em;
+  left: -29px;
+  z-index: 2;
+}
+.sb-content {
+  width: 100%;
+  padding: 1em;
+  position: sticky;
+  top: 1em;
+}
+
+// footer
+footer {
+  margin-top: 1em;
+  padding: 1em 0;
+  font-size: 0.8em;
+  text-align: center;
+  color: $darkgray;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    background: $darkgray;
+    height: 1px;
+    width: 5%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

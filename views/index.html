@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game Tracker with custom backend API</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Oswald:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/animate-custom.css">
+</head>
+<body class="animated fadeIn">
+  <div class="fullbody-flex">
+    <header class="wrapper-main header">
+      <h1>gametracker</h1>
+      <p>A game tracker SPA with a custom API, built with node.js</p>
+    </header>
+  
+    <section class="newGame wrapper-main">
+      <!-- <div class="show-form-btn">
+        <button class="form-show">Adding something new?</button>
+      </div> -->
+      <div class="form-show">
+        <button class="form-btn form-btn-show">
+          Add new
+        </button>
+      </div>
+      <form action="" method="post" id="form" class="form form-hide">
+        <input type="text" id="form-title" placeholder="title goes here" required>
+        <input type="text" id="form-img" placeholder="image goes here">
+        <div class="form-submit">
+          <button class="form-btn">Submit</button>
+        </div>
+      </form>
+    </section>
+  
+    <main>
+      <section class="results wrapper-main">
+        <h2>What you're currently tracking:</h2>
+        <div class="results-wrapper">
+    
+        </div>
+      </section>
+    
+      <aside class="sb sb-hide">
+        <!-- <button class="sb-close">X</button> -->
+      </aside>
+    </main>
+  </div>
+
+  <footer>
+    <p>Built with pineapple cakes, dread, and water.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
